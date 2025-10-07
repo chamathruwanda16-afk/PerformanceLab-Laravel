@@ -36,14 +36,18 @@
               <td class="px-4 py-2">{{ ucfirst($o->status ?? 'pending') }}</td>
               <td class="px-4 py-2 text-right space-x-2">
                 <form action="{{ route('admin.orders.status', $o) }}" method="POST" class="inline">
-                  @csrf @method('PATCH')
-                  <select name="status" class="rounded border border-white/20 bg-white/10 px-2 py-1">
-                    @foreach(['pending','processing','paid','successful','cancelled'] as $s)
-                      <option value="{{ $s }}" @selected($o->status===$s)>{{ ucfirst($s) }}</option>
-                    @endforeach
-                  </select>
-                  <button class="rounded border border-white/20 bg-white/10 px-2 py-1 hover:bg-white/20">Save</button>
-                </form>
+  @csrf @method('PATCH')
+  <select name="status"
+          class="rounded border border-white/20 px-2 py-1
+                 bg-white text-gray-900   
+                 focus:outline-none focus:ring-2 focus:ring-white/30">
+    @foreach(['pending','processing','paid','successful','cancelled'] as $s)
+      <option value="{{ $s }}" @selected($o->status===$s)>{{ ucfirst($s) }}</option>
+    @endforeach
+  </select>
+  <button class="rounded border border-white/20 bg-white/10 px-2 py-1 hover:bg-white/20">Save</button>
+</form>
+
 
                 @if(($o->status ?? '') !== 'cancelled')
                   <form action="{{ route('admin.orders.cancel', $o) }}" method="POST" class="inline"

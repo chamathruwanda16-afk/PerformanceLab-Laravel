@@ -13,20 +13,18 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Fortify;
-
+use Laravel\Fortify\Contracts\LoginResponse;
+use App\Actions\Fortify\AdminLoginResponse;
 class FortifyServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
+   
     public function register(): void
     {
         //
+        $this->app->singleton(LoginResponse::class, AdminLoginResponse::class);
     }
 
-    /**
-     * Bootstrap any application services.
-     */
+  
     public function boot(): void
     {
         Fortify::createUsersUsing(CreateNewUser::class);

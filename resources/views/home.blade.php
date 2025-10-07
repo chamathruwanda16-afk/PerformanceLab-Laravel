@@ -12,8 +12,8 @@
         </div>
       </div>
       <div class="relative">
-        <div class="aspect-[4/3] w-full rounded-3xl bg-gradient-to-br from-white/10 to-white/0 border border-white/10 flex items-center justify-center overflow-hidden">
-          <img src="/images/turbo-hero.png" alt="Turbo" class="h-72 md:h-96 object-contain">
+        <div class="aspect-[6/3] w-full rounded-3xl bg-gradient-to-br from-white/10 to-white/0 border border-white/10 flex items-center justify-center overflow-hidden">
+          <img src="/images/mark2.jpeg" alt="Turbo" class="h-70 md:h-130 object-contain">
         </div>
       </div>
     </div>
@@ -46,10 +46,10 @@
     <h2 class="text-3xl font-extrabold">Shop by category</h2>
     <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       @foreach(($categories ?? [
-          ['name'=>'Turbo Chargers','image'=>'cat-turbo.png'],
-          ['name'=>'Wheels & Tires','image'=>'cat-wheels.png'],
-          ['name'=>'Universal Parts','image'=>'cat-universal.png'],
-          ['name'=>'Accessories','image'=>'cat-accessories.png'],
+          ['name'=>'Turbo Chargers','image'=>'borg.jpg'],
+          ['name'=>'Wheels','image'=>'wheels.webp'],
+          ['name'=>'Universal Parts','image'=>'gearnob.jpg'],
+          ['name'=>'Accessories','image'=>'ecu.jpeg'],
       ]) as $c)
         <div class="rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
           <div class="aspect-video">

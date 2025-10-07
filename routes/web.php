@@ -67,4 +67,13 @@ Route::middleware(['auth', 'can:admin'])
         Route::get('/orders/{order}', [OrderAdminController::class, 'show'])->name('orders.show');
         Route::patch('/orders/{order}/status', [OrderAdminController::class, 'updateStatus'])->name('orders.status');
         Route::patch('/orders/{order}/cancel', [OrderAdminController::class, 'cancel'])->name('orders.cancel');
+        
+            Route::get('/dashboard', function () {
+    return auth()->user()->can('admin')
+        ? redirect()->route('admin.dashboard')
+        : redirect()->route('account.index');
+})->middleware(['auth','verified'])->name('dashboard');
+
+    
     });
+

@@ -1,15 +1,15 @@
 <nav x-data="{ open:false }" class="sticky top-0 z-50 bg-[#0a0d11]/95 backdrop-blur border-b border-white/10">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex h-16 items-center justify-between">
-      <a href="{{ route('home') }}" class="flex items-center gap-3">
-        {{-- TODO: replace with real logo image --}}
-        <div class="h-7 w-36 flex items-center justify-center rounded bg-white text-black font-extrabold tracking-widest">
-          PERF
-        </div>
-        <span class="sr-only">Performance Lab</span>
-      </a>
-
-      <div class="hidden sm:flex items-center gap-8">
+      <a href="{{ route('home') }}" class="flex items-center">
+  <img
+    src="{{ asset('images/logo.png') }}"
+    alt="Performance Lab"
+    class="block object-contain h-[24px] w-auto max-w-[180px]"
+    style="height:24px; max-width:350px; width:auto;"
+  />
+</a>
+<div class="hidden sm:flex items-center gap-8">
         <a href="{{ route('home') }}" class="text-sm hover:text-white {{ request()->routeIs('home') ? 'text-white' : 'text-gray-300' }}">Home</a>
         <a href="{{ route('products.index') }}" class="text-sm hover:text-white {{ request()->routeIs('products.*') ? 'text-white' : 'text-gray-300' }}">Products</a>
         <a href="#" class="text-sm text-gray-300 hover:text-white">About</a>
