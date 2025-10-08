@@ -1,4 +1,17 @@
 <x-guest-layout>
+
+  {{-- Logo --}}
+  <div class="mb-6 flex justify-center">
+    <a href="{{ route('home') }}">
+      <img
+        src="{{ asset('images/logo.png') }}"
+        alt="Performance Lab"
+        class="h-10 w-auto object-contain"
+        style="height:40px; max-width:220px;"
+      >
+    </a>
+  </div>
+
   <h1 class="text-xl font-extrabold">Sign in</h1>
 
   <x-validation-errors class="mt-4" />

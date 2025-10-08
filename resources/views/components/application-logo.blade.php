@@ -1,7 +1,8 @@
-<a href="{{ route('home') }}" class="flex items-center">
+<a href="{{ route('home') }}" class="block">
   <img
     src="{{ asset('images/logo.png') }}"
     alt="Performance Lab"
-    class="h-6 sm:h-7 md:h-8 w-auto object-contain block"
-  />
+    class="mx-auto h-10 w-auto object-contain"
+    style="height:40px; max-width:220px;"
+  >
 </a>
